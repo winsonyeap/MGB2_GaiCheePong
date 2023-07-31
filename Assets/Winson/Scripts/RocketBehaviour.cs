@@ -20,7 +20,6 @@ public class RocketBehaviour : MonoBehaviour
 
     public MobileHorizMovement horizMovement = MobileHorizMovement.Accelerometer;
 
-
     void Start()
     {
         // Get access to our Rigidbody component
@@ -83,7 +82,7 @@ public class RocketBehaviour : MonoBehaviour
             xMove = -1;
         }
 
-        else
+        else 
         {
             // Otherwise we're on the left
             xMove = 1;
