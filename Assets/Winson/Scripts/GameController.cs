@@ -10,24 +10,30 @@ public class GameController : MonoBehaviour
     public int minNumber;
     public int maxNumber;
     public Transform spawnPoint;
-
-    //private TextMeshPro quesTMP;
-    //private TextMeshPro quesTMP;
-    //private TextMeshPro quesTMP;
+    public int answerOffSet;
+    public float spawnInterval;
+    public GameObject questText;
 
     private float timer = 0.0f;
+
+    private int a;
+    private int b;
+    private int answer;
+    private int wrongAnswer;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         GenerateQuestionAndOptions();
+
     }
 
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
-        if(timer >= 3f)
+        if(timer >= spawnInterval)
         {
             timer = 0.0f;
             GenerateQuestionAndOptions();
@@ -36,27 +42,47 @@ public class GameController : MonoBehaviour
 
     void GenerateQuestionAndOptions() //a + b = answer
     {
-        int random = Random.Range(1, 3);
+        int randomForQuestion = Random.Range(1, 3);
 
-
-        if(random <= 1) //addition
+        if(randomForQuestion <= 1) //addition
         {
-            int answer = Random.Range(minNumber, maxNumber);
-            int a = Random.Range(minNumber, answer);
-            int b = answer - a;
+            answer = Random.Range(minNumber, maxNumber);
+            a = Random.Range(minNumber, answer);
+            b = answer - a;
 
+            wrongAnswer = Random.Range(answer + answerOffSet, answer - answerOffSet);
+            questText.GetComponent<TextMeshProUGUI>().text = a + " + " + b + " = ? ";      //question generation
+
+            Debug.Log(a + " + " + b + " = " + answer + " wrong answer is " + wrongAnswer);
+        }
+
+        if (randomForQuestion >= 2) //subtraction
+        {
+            a = Random.Range(minNumber, maxNumber);
+            answer = Random.Range(minNumber, a);
+            b = a - answer;
+
+            wrongAnswer = Random.Range(answer + answerOffSet, answer - answerOffSet);
+            questText.GetComponent<TextMeshProUGUI>().text = a + " - " + b + " = ? ";      //question generation      
             
-            Debug.Log(a + " + " + b + " = " + answer);
+            Debug.Log(a + " - " + b + " = " + answer + " wrong answer is " + wrongAnswer);
         }
 
-        if (random >= 2) //subtraction
+        var spawnedOptions = Instantiate(options, spawnPoint.position, spawnPoint.rotation);
+        int randomForOptions = Random.Range(1, 3);
+
+        if(randomForOptions <= 1) // right, wrong
         {
-            int a = Random.Range(minNumber, maxNumber);
-            int b = Random.Range(minNumber, a);
-            int answer = a - b;
-
-            Debug.Log(a + " - " + b + " = " + answer);
+            spawnedOptions.transform.Find("Option One/Canvas/Option A Text").GetComponent<TextMeshProUGUI>().text = answer.ToString();
+            spawnedOptions.transform.Find("Option Two/Canvas/Option B Text").GetComponent<TextMeshProUGUI>().text = wrongAnswer.ToString();
+            spawnedOptions.transform.Find("Option Two").GetComponent<WrongAnswer>().IsWrong = true;
         }
-       
+
+        if (randomForOptions >= 2) // wrong, right
+        {
+            spawnedOptions.transform.Find("Option One/Canvas/Option A Text").GetComponent<TextMeshProUGUI>().text = wrongAnswer.ToString();
+            spawnedOptions.transform.Find("Option Two/Canvas/Option B Text").GetComponent<TextMeshProUGUI>().text = answer.ToString();
+            spawnedOptions.transform.Find("Option One").GetComponent<WrongAnswer>().IsWrong = true;
+        }
     }
 }
