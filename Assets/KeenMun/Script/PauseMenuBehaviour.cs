@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class PauseMenuBehaviour : MainMenuBehaviour
-{
+{   
 
     public void PauseGame()
     {
@@ -15,4 +16,10 @@ public class PauseMenuBehaviour : MainMenuBehaviour
     {
         Time.timeScale = 1f;
     }
+
+    public void RetryLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 }
