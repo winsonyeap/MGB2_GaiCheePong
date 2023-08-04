@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RandomNumberAddition : MonoBehaviour
+public class DoubleChoiceQuestion : MonoBehaviour
 {
     public Text equationText;
     public Text instructionText;
@@ -32,7 +32,7 @@ public class RandomNumberAddition : MonoBehaviour
             CalculateResult();
             DisplayEquation();
 
-            instructionText.text = "Tilt left or right to select your answer!";
+        //    instructionText.text = "Tilt left or right to select your answer!";
             leftAnswerText.color = Color.black;
             rightAnswerText.color = Color.black;
 
@@ -49,7 +49,7 @@ public class RandomNumberAddition : MonoBehaviour
     private void EndQuestion()
     {
         isQuestionActive = false;
-        instructionText.text = "Time's up! Try the next question.";
+   //     instructionText.text = "Time's up! Try the next question.";
         Invoke("NextQuestion", restTime); // Move to the next question after restTime seconds
     }
 
@@ -74,40 +74,11 @@ public class RandomNumberAddition : MonoBehaviour
         rightAnswerText.text = (correctAnswer + 1).ToString();
     }
 
-    private void Update()
-    {
-        if (isGameActive && isQuestionActive)
-        {
-            float tilt = Input.acceleration.x;
+    
 
-            if (tilt < -0.5f)
-            {
-                SelectAnswer(0); // Tilted to the left
-            }
-            else if (tilt > 0.5f)
-            {
-                SelectAnswer(1); // Tilted to the right
-            }
-        }
-    }
+   
 
-    private void SelectAnswer(int choice)
-    {
-        if (correctAnswer == randomNumber1 + randomNumber2 && choice == 0)
-        {
-            HandleAnswerSelection(true);
-        }
-        else if (correctAnswer == randomNumber1 + randomNumber2 + 1 && choice == 1)
-        {
-            HandleAnswerSelection(false);
-        }
-        else
-        {
-            HandleIncorrectSelection();
-        }
-    }
-
-    private void HandleAnswerSelection(bool isLeftAnswer)
+    public void HandleAnswerSelection(bool isLeftAnswer)
     {
         isQuestionActive = false;
         instructionText.text = "Correct!";

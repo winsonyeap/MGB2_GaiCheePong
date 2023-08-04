@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5.0f;
+    public DoubleChoiceQuestion doubleChoiceQuestion; // Reference to the DoubleChoiceQuestion script
 
-    private Vector2 touchStartPos;
     private Rigidbody rb;
 
     private void Start()
@@ -16,27 +16,21 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        // Check for touch input
-        if (Input.touchCount > 0)
+        // Check for horizontal input
+        float moveInput = Input.GetAxis("Horizontal");
+        Vector3 moveDirection = new Vector3(moveInput, 0.0f, 0.0f);
+        rb.velocity = moveDirection * speed * Time.deltaTime;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("LeftAnswer"))
         {
-            Touch touch = Input.GetTouch(0);
-
-            switch (touch.phase)
-            {
-                case TouchPhase.Began:
-                    touchStartPos = touch.position;
-                    break;
-
-                case TouchPhase.Moved:
-                    float deltaX = touch.position.x - touchStartPos.x;
-                    Vector3 moveDirection = new Vector3(deltaX, 0.0f, 0.0f);
-                    rb.velocity = moveDirection * speed * Time.deltaTime;
-                    break;
-
-                case TouchPhase.Ended:
-                    rb.velocity = Vector3.zero;
-                    break;
-            }
+            doubleChoiceQuestion.HandleAnswerSelection(true);
+        }
+        else if (other.CompareTag("RightAnswer"))
+        {
+            doubleChoiceQuestion.HandleAnswerSelection(false);
         }
     }
 }
