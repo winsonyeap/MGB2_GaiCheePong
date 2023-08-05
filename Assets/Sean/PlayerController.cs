@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 5.0f;
+    public float speed = 1.0f;
     public DoubleChoiceQuestion doubleChoiceQuestion; // Reference to the DoubleChoiceQuestion script
 
     private Rigidbody rb;
@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
         float moveInput = Input.GetAxis("Horizontal");
         Vector3 moveDirection = new Vector3(moveInput, 0.0f, 0.0f);
         rb.velocity = moveDirection * speed * Time.deltaTime;
+
     }
 
     private void OnTriggerEnter(Collider other)
