@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Sean/MGD2_Sean.unity
-    guid: d7dc0b8898491f84ea36c55dc606a2f6
+    path: Assets/MGD2_Sean.unity
+    guid: 7bafe1b2f35b36b4aab02bdd801f6647
   m_configObjects: {}
