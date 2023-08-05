@@ -53,7 +53,7 @@ public class DoubleChoiceQuestion : MonoBehaviour
             EndGame();
         }
 
-        //rocket.transform.position = new Vector3(0f, 0f, 68.2f);
+        rocket.transform.position = new Vector3(0f, -10f, 68.2f);
 
     }
     private void ShowNextQuestion()

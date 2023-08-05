@@ -2,9 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody), typeof (BoxCollider))] //Joystick
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 1.0f;
+    [SerializeField] private Rigidbody _rigidbody; //Joystick
+    [SerializeField] private FixedJoystick _joystick; //Joystick
+    [SerializeField] private Animator _animator; //Joystick
+
+    [SerializeField] private float _moveSpeed; //Joystick
+
+    private void FixedUpdate()  //Joystick
+    {
+        _rigidbody.velocity = new Vector3(_joystick.Horizontal * _moveSpeed, _rigidbody.velocity.y, _joystick.Vertical * _moveSpeed);  //Joystick
+    }
+    public float speed = 10000.0f;
     public DoubleChoiceQuestion doubleChoiceQuestion; // Reference to the DoubleChoiceQuestion script
 
     private Rigidbody rb;
