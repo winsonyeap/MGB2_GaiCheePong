@@ -2022,6 +2022,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1148fa968f3714d8e10fc6d621059d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameOverMenu: {fileID: 7419223802837261976}
+  wrongAnswerScript: {fileID: 0}
 --- !u!1 &7419223802184109129
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,18 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class PauseMenuBehaviour : MainMenuBehaviour
 {
-    void Update()
-    {
-        ///test function
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            RetryLevel();
-        }
-    }
+    public GameObject gameOverMenu;    
     public void PauseGame()
     {
         Time.timeScale = 0f;
@@ -30,4 +24,8 @@ public class PauseMenuBehaviour : MainMenuBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void GameOver()
+    {
+        gameOverMenu.gameObject.SetActive(true);      
+    }
 }
