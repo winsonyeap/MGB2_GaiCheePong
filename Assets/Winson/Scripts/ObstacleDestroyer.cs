@@ -1,23 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ObstacleDestroyer : MonoBehaviour
 {
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if(collision.gameObject.CompareTag("Obstacle Parent"))
-    //    {
-    //        Destroy(collision.gameObject);
-    //    }
-    //}
+    public GameObject questText;
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Obstacle Parent"))
         {
             Destroy(other.gameObject);
-            Debug.Log("destroy");
+            questText.GetComponent<TextMeshProUGUI>().text = "";
+            //Debug.Log("destroy");
         }
     }
 }
