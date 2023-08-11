@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Yeet
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -700,7 +700,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789345177}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.2, y: 0, z: 0}
+  m_LocalPosition: {x: -25.18, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1134,7 +1134,7 @@ GameObject:
   - component: {fileID: 1301697850}
   m_Layer: 0
   m_Name: Game Controller
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1171,9 +1171,13 @@ MonoBehaviour:
   minNumber: 10
   maxNumber: 99
   spawnPoint: {fileID: 789345178}
-  answerOffSet: 20
-  spawnInterval: 6
+  answerOffSet: 30
+  spawnInterval: 9
   questText: {fileID: 3593928}
+  subtraction: 0
+  limited: 1
+  numOfQuestions: 3
+  numOfQuestionsAsked: 0
 --- !u!1 &1413155268
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,7 +1399,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1540115063}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.81, y: 0, z: 0}
+  m_LocalPosition: {x: 5.94, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1427,6 +1431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a477804a0652e8d48905b26d96ab0f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  questText: {fileID: 3593928}
 --- !u!1 &1629141608
 GameObject:
   m_ObjectHideFlags: 0
