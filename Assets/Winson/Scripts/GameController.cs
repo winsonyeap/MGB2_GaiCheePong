@@ -90,7 +90,8 @@ public class GameController : MonoBehaviour
         a = Random.Range(minNumber, answer);
         b = answer - a;
 
-        wrongAnswer = Random.Range(answer + answerOffSet, answer - answerOffSet);
+        //wrongAnswer = Random.Range(answer + answerOffSet, answer - answerOffSet);
+        WrongAnswerGeneration();
         questText.GetComponent<TextMeshProUGUI>().text = a + " + " + b + " = ? ";      //question generation
 
         //Debug.Log(a + " + " + b + " = " + answer + " wrong answer is " + wrongAnswer);
@@ -102,9 +103,20 @@ public class GameController : MonoBehaviour
         answer = Random.Range(minNumber, a);
         b = a - answer;
 
-        wrongAnswer = Random.Range(answer + answerOffSet, answer - answerOffSet);
+        //wrongAnswer = Random.Range(answer + answerOffSet, answer - answerOffSet);
+        WrongAnswerGeneration();
         questText.GetComponent<TextMeshProUGUI>().text = a + " - " + b + " = ? ";      //question generation      
 
         //Debug.Log(a + " - " + b + " = " + answer + " wrong answer is " + wrongAnswer);
+    }
+
+    void WrongAnswerGeneration()
+    {
+        wrongAnswer = Random.Range(answer + answerOffSet, answer - answerOffSet);
+
+        if(wrongAnswer == answer)
+        {
+            WrongAnswerGeneration();
+        }
     }
 }

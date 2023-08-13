@@ -1168,8 +1168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   question: {fileID: 1497147942}
   options: {fileID: 6860968332600977105, guid: 57720da92eb92ef44a766376051735d1, type: 3}
-  minNumber: 10
-  maxNumber: 99
+  minNumber: 30
+  maxNumber: 100
   spawnPoint: {fileID: 789345178}
   answerOffSet: 30
   spawnInterval: 9

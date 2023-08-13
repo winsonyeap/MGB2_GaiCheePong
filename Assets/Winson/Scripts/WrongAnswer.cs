@@ -12,30 +12,31 @@ public class WrongAnswer : MonoBehaviour
 
     private void Start()
     {
-        gc = GameObject.FindGameObjectWithTag("Game Controller");
+        gc = GameObject.FindGameObjectWithTag("GameController");
         gcScript = gc.GetComponent<GameController>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (gcScript.limited && gcScript.numOfQuestions == gcScript.numOfQuestionsAsked && other.CompareTag("Player"))
+        if (gcScript.limited && gcScript.numOfQuestions == gcScript.numOfQuestionsAsked && other.CompareTag("Player") && !IsWrong)
         {
             Time.timeScale = 0;
             FindObjectOfType<PauseMenuBehaviour>().GameWin(); //JokeChu function
-            // level complete
+            // level complete when collide with correct answer
         }
 
         if (gcScript.limited && IsWrong && other.CompareTag("Player"))
         {
             Time.timeScale = 0;
             FindObjectOfType<PauseMenuBehaviour>().GameOver(); //JokeChu function
-            //level failed
+            //level failed when collide with wrong answer
         }
 
         if (!gcScript.limited && IsWrong && other.CompareTag("Player"))
         {
             Time.timeScale = 0;          
             Debug.Log("done");       
+            //game over when collide with wrong answer
         }
        
     } 

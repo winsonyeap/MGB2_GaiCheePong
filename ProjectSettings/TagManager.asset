@@ -7,7 +7,6 @@ TagManager:
   - Mars
   - Spawn Point
   - Obstacle Parent
-  - Game Controller
   layers:
   - Default
   - TransparentFX
