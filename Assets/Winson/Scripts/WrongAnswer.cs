@@ -6,13 +6,13 @@ public class WrongAnswer : MonoBehaviour
 {
     public bool IsWrong = false;
     private GameObject gc;
-    private GameController gcScript;
+    public GameController gcScript;
 
     public PauseMenuBehaviour pauseMenuBehavior; //JokeChu script
 
     private void Start()
     {
-        gc = GameObject.FindGameObjectWithTag("GameController");
+        gc = GameObject.FindGameObjectWithTag("Game Controller");
         gcScript = gc.GetComponent<GameController>();
     }
 
