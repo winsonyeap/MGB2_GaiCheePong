@@ -21,22 +21,21 @@ public class WrongAnswer : MonoBehaviour
         if (gcScript.limited && gcScript.numOfQuestions == gcScript.numOfQuestionsAsked && other.CompareTag("Player"))
         {
             Time.timeScale = 0;
+            FindObjectOfType<PauseMenuBehaviour>().GameWin(); //JokeChu function
             // level complete
         }
 
         if (gcScript.limited && IsWrong && other.CompareTag("Player"))
         {
             Time.timeScale = 0;
+            FindObjectOfType<PauseMenuBehaviour>().GameOver(); //JokeChu function
             //level failed
         }
 
         if (!gcScript.limited && IsWrong && other.CompareTag("Player"))
         {
-            Time.timeScale = 0;
-            Debug.Log("done");
-
-            FindObjectOfType<PauseMenuBehaviour>().GameOver(); //JokeChu function
-            
+            Time.timeScale = 0;          
+            Debug.Log("done");       
         }
        
     } 

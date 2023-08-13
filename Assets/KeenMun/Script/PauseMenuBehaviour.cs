@@ -8,8 +8,10 @@ using UnityEngine.UI;
 public class PauseMenuBehaviour : MainMenuBehaviour
 {
     public GameObject gameOverMenu;
+    public GameObject gameWinMenu;
     public AudioSource GameplayMusic;
     public AudioSource GameOverMusic;
+    public AudioSource GameWinMusic;
     public void PauseGame()
     {
         Time.timeScale = 0f;
@@ -32,7 +34,13 @@ public class PauseMenuBehaviour : MainMenuBehaviour
     {
         gameOverMenu.gameObject.SetActive(true);
         GameplayMusic.Stop();
-        GameOverMusic.Play();
-        
+        GameOverMusic.Play();        
+    }
+
+    public void GameWin()
+    {
+        gameWinMenu.gameObject.SetActive(true);
+        GameplayMusic.Stop();
+        GameWinMusic.Play();
     }
 }
