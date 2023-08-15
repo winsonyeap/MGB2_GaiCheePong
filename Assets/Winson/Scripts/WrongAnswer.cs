@@ -12,7 +12,7 @@ public class WrongAnswer : MonoBehaviour
 
     private void Start()
     {
-        gc = GameObject.FindGameObjectWithTag("GameController");
+        gc = GameObject.FindGameObjectWithTag("Game Controller");
         gcScript = gc.GetComponent<GameController>();
     }
 
