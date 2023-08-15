@@ -213,6 +213,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsWrong: 0
+  gcScript: {fileID: 0}
+  gameOver: 0
+  otherOption: {fileID: 6860968332179215418}
+  pauseMenuBehavior: {fileID: 0}
 --- !u!1 &6860968331939725937
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,6 +464,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsWrong: 0
+  gcScript: {fileID: 0}
+  gameOver: 0
+  otherOption: {fileID: 6860968331725703558}
+  pauseMenuBehavior: {fileID: 0}
 --- !u!1 &6860968332348129014
 GameObject:
   m_ObjectHideFlags: 0
