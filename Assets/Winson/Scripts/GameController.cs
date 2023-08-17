@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class GameController : MonoBehaviour
     private int b;
     private int answer;
     private int wrongAnswer;
+
+    //JokeChu stuff
+    public GameObject questionPanel;
 
     // Update is called once per frame
     void Update()
@@ -65,6 +69,8 @@ public class GameController : MonoBehaviour
         {
             AdditionGeneration();
         }
+
+        OpenQuestionPanel();      
 
         var spawnedOptions = Instantiate(options, spawnPoint.position, spawnPoint.rotation);
         int randomForOptions = Random.Range(1, 3);
@@ -117,6 +123,20 @@ public class GameController : MonoBehaviour
         if(wrongAnswer == answer)
         {
             WrongAnswerGeneration();
+        }
+    }
+
+    void OpenQuestionPanel()
+    {
+        if (questionPanel != null)
+        {
+            Animator animator = questionPanel.GetComponent<Animator>();
+            if (animator != null)
+            {
+                bool isOpen = animator.GetBool("QuestionCome"); 
+
+                animator.SetBool("QuestionCome", !isOpen); 
+            }
         }
     }
 }
