@@ -383,6 +383,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7419223802701274159, guid: 9d8c4ed38c6b1e94a9018a8efa91e2a8, type: 3}
   m_PrefabInstance: {fileID: 7419223801170394335}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &543779022 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5546747315237514756, guid: 9a8ea7cbbb7621a4aa45a977949f0a4f, type: 3}
+  m_PrefabInstance: {fileID: 872990266}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &594715957
 GameObject:
   m_ObjectHideFlags: 0
@@ -11716,7 +11721,7 @@ MonoBehaviour:
   questText: {fileID: 594715957}
   subtraction: 0
   limited: 1
-  numOfQuestions: 10
+  numOfQuestions: 1
   numOfQuestionsAsked: 0
   questionPanel: {fileID: 1463054444}
 --- !u!4 &2020375907
@@ -12016,6 +12021,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1273586791, guid: 9d8c4ed38c6b1e94a9018a8efa91e2a8, type: 3}
+      propertyPath: Rocket
+      value: 
+      objectReference: {fileID: 1934100104}
+    - target: {fileID: 1273586791, guid: 9d8c4ed38c6b1e94a9018a8efa91e2a8, type: 3}
       propertyPath: gameWinMenu
       value: 
       objectReference: {fileID: 352125297}
@@ -12031,6 +12040,10 @@ PrefabInstance:
       propertyPath: GameplayMusic
       value: 
       objectReference: {fileID: 1783346579}
+    - target: {fileID: 1273586791, guid: 9d8c4ed38c6b1e94a9018a8efa91e2a8, type: 3}
+      propertyPath: InactiveFlame
+      value: 
+      objectReference: {fileID: 543779022}
     - target: {fileID: 1273586791, guid: 9d8c4ed38c6b1e94a9018a8efa91e2a8, type: 3}
       propertyPath: gameOverMusic
       value: 

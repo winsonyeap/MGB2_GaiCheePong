@@ -14,7 +14,7 @@ public class PauseMenuBehaviour : MainMenuBehaviour
     public AudioSource GameWinMusic;
     public GameObject Rocket;
     public GameObject InactiveFlame;
-    
+
     public void PauseGame()
     {
         Time.timeScale = 0f;
@@ -49,7 +49,6 @@ public class PauseMenuBehaviour : MainMenuBehaviour
 
     public void GameWin()
     {
-        StartCoroutine(RocketWinAnim());
         StartCoroutine(WinMenuOpen());
     }
 
@@ -63,15 +62,4 @@ public class PauseMenuBehaviour : MainMenuBehaviour
         Time.timeScale = 0f;
     }
 
-    IEnumerator RocketWinAnim()
-    {
-        yield return new WaitForSeconds(1f);
-
-        Animator FlyAway = Rocket.GetComponent<Animator>();
-        {
-            FlyAway.SetTrigger("disappear");
-        }
-
-        InactiveFlame.SetActive(false);
-    }
 }
