@@ -12,6 +12,9 @@ public class PauseMenuBehaviour : MainMenuBehaviour
     public AudioSource GameplayMusic;
     public AudioSource GameOverMusic;
     public AudioSource GameWinMusic;
+    public GameObject Rocket;
+    public GameObject InactiveFlame;
+    
     public void PauseGame()
     {
         Time.timeScale = 0f;
@@ -34,21 +37,41 @@ public class PauseMenuBehaviour : MainMenuBehaviour
     {
         GameOverMusic.Play();
         GameplayMusic.Stop();
-        //yield return new WaitForSeconds(3f);
         StartCoroutine(GameOverPause());
     }
 
     IEnumerator GameOverPause()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         gameOverMenu.SetActive(true);
         Time.timeScale = 0f;
     }
 
     public void GameWin()
     {
+        StartCoroutine(RocketWinAnim());
+        StartCoroutine(WinMenuOpen());
+    }
+
+    IEnumerator WinMenuOpen()
+    {
+        yield return new WaitForSeconds(2.5f);
+
         gameWinMenu.gameObject.SetActive(true);
         GameplayMusic.Stop();
         GameWinMusic.Play();
+        Time.timeScale = 0f;
+    }
+
+    IEnumerator RocketWinAnim()
+    {
+        yield return new WaitForSeconds(1f);
+
+        Animator FlyAway = Rocket.GetComponent<Animator>();
+        {
+            FlyAway.SetTrigger("disappear");
+        }
+
+        InactiveFlame.SetActive(false);
     }
 }

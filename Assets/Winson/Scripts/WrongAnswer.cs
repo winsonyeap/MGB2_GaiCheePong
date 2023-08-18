@@ -33,8 +33,7 @@ public class WrongAnswer : MonoBehaviour
         }
 
         if (gcScript.limited && gcScript.numOfQuestions == gcScript.numOfQuestionsAsked && other.CompareTag("Player") && !IsWrong && !gameOver)
-        {
-            Time.timeScale = 0;
+        {           
             FindObjectOfType<PauseMenuBehaviour>().GameWin(); //JokeChu function
             // level complete when collide with correct answer
         }
