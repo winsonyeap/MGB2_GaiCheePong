@@ -12014,6 +12014,14 @@ PrefabInstance:
       propertyPath: gcScript
       value: 
       objectReference: {fileID: 2020375906}
+    - target: {fileID: 2008382449, guid: 9d8c4ed38c6b1e94a9018a8efa91e2a8, type: 3}
+      propertyPath: Explosion
+      value: 
+      objectReference: {fileID: 6700402553237159260, guid: 75b4d233a00be24429988c3925ba900b, type: 3}
+    - target: {fileID: 2008382449, guid: 9d8c4ed38c6b1e94a9018a8efa91e2a8, type: 3}
+      propertyPath: rocketPlayer
+      value: 
+      objectReference: {fileID: 985834176}
     - target: {fileID: 7419223801173728144, guid: 9d8c4ed38c6b1e94a9018a8efa91e2a8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 

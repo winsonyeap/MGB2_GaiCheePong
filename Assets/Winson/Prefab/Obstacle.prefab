@@ -502,6 +502,7 @@ MonoBehaviour:
   gameOver: 0
   otherOption: {fileID: 6860968332179215418}
   pauseMenuBehavior: {fileID: 0}
+  Explosion: {fileID: 6700402553237159260, guid: 75b4d233a00be24429988c3925ba900b, type: 3}
 --- !u!1 &6860968331939725937
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,6 +754,7 @@ MonoBehaviour:
   gameOver: 0
   otherOption: {fileID: 6860968331725703558}
   pauseMenuBehavior: {fileID: 0}
+  Explosion: {fileID: 6700402553237159260, guid: 75b4d233a00be24429988c3925ba900b, type: 3}
 --- !u!1 &6860968332348129014
 GameObject:
   m_ObjectHideFlags: 0
