@@ -11713,15 +11713,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   question: {fileID: 1463054444}
   options: {fileID: 6860968332600977105, guid: 57720da92eb92ef44a766376051735d1, type: 3}
-  minNumber: 10
-  maxNumber: 99
+  minNumber: 2
+  maxNumber: 10
   spawnPoint: {fileID: 719466041}
   answerOffSet: 20
   spawnInterval: 6
   questText: {fileID: 594715957}
   subtraction: 0
   limited: 1
-  numOfQuestions: 1
+  numOfQuestions: 10
   numOfQuestionsAsked: 0
   questionPanel: {fileID: 1463054444}
 --- !u!4 &2020375907
