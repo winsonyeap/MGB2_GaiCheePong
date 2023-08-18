@@ -14,13 +14,13 @@ public class WrongAnswer : MonoBehaviour
     private void Start()
     {
         gc = GameObject.FindGameObjectWithTag("Game Controller");
-        gcScript = gc.GetComponent<GameController>();
+        gcScript = gc.GetComponent<GameController>();        
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (gcScript.limited && IsWrong && other.CompareTag("Player"))
-        {
+        {          
             gameOver = true;
             otherOption.GetComponent<WrongAnswer>().gameOver = true;
             Time.timeScale = 0;

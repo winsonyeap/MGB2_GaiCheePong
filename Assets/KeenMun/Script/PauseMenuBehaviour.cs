@@ -33,10 +33,9 @@ public class PauseMenuBehaviour : MainMenuBehaviour
     public void GameOver()
     {
         GameOverMusic.Play();
-        //yield return new WaitForSeconds(3f);
-        gameOverMenu.gameObject.SetActive(true);
         GameplayMusic.Stop();
-               
+        //yield return new WaitForSeconds(3f);
+        gameOverMenu.SetActive(true);
     }
 
     public void GameWin()
