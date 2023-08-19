@@ -27,16 +27,18 @@ public class RocketBehaviour : MonoBehaviour
     }
     private void Update()
     {
+        var horizontalSpeed = Input.GetAxis("Horizontal") * dodgeSpeed;
+
         // Check if we are running on a mobile device
-        #if UNITY_IOS || UNITY_ANDROID
-        
-        //if(horizMovement == MobileHorizMovement.Accelerometer)
-        //{
-        //    // Move player based on direction of the accelerometer
-        //    horizontalSpeed = Input.acceleration.x * dodgeSpeed;
-        //}
+#if UNITY_IOS || UNITY_ANDROID
+
+        if (horizMovement == MobileHorizMovement.Accelerometer)
+        {
+            // Move player based on direction of the accelerometer
+            horizontalSpeed = Input.acceleration.x * dodgeSpeed;
         }
-        #endif
+
+#endif
     }
 
     private void FixedUpdate()
