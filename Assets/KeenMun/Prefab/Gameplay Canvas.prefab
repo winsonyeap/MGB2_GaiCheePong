@@ -1978,8 +1978,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1273586791}
-        m_TargetAssemblyTypeName: MainMenuBehaviour, Assembly-CSharp
-        m_MethodName: ExitGame
+        m_TargetAssemblyTypeName: PauseMenuBehaviour, Assembly-CSharp
+        m_MethodName: CloseGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2126,6 +2126,7 @@ MonoBehaviour:
   GameWinMusic: {fileID: 0}
   Rocket: {fileID: 0}
   InactiveFlame: {fileID: 0}
+  LoadingScreen: {fileID: 0}
 --- !u!114 &2008382449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2404,8 +2405,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1273586791}
-        m_TargetAssemblyTypeName: MainMenuBehaviour, Assembly-CSharp
-        m_MethodName: ExitGame
+        m_TargetAssemblyTypeName: PauseMenuBehaviour, Assembly-CSharp
+        m_MethodName: CloseGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

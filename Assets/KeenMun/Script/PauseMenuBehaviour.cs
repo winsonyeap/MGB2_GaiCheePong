@@ -15,6 +15,7 @@ public class PauseMenuBehaviour : MainMenuBehaviour
     public GameObject Rocket;
     public GameObject InactiveFlame;
 
+
     public void PauseGame()
     {
         Time.timeScale = 0f;
@@ -60,6 +61,11 @@ public class PauseMenuBehaviour : MainMenuBehaviour
         GameplayMusic.Stop();
         GameWinMusic.Play();
         Time.timeScale = 0f;
+    }
+
+    public void CloseGame()
+    {
+        Application.Quit();
     }
 
 }
