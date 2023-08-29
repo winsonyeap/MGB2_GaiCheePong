@@ -44,7 +44,7 @@ public class RocketBehaviour : MonoBehaviour
     private void FixedUpdate()
     {
         // Check if we're moving to the side
-        var horizontalSpeed = Input.GetAxis("Horizontal") * dodgeSpeed;
+        float horizontalSpeed = 0;
 
         // Check if we are running either in the Unity editor or in a    
         // standalone build.
