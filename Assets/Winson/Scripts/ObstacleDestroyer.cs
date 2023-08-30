@@ -12,7 +12,7 @@ public class ObstacleDestroyer : MonoBehaviour
         if(other.CompareTag("Obstacle Parent"))
         {
             Destroy(other.gameObject);
-            questText.GetComponent<TextMeshProUGUI>().text = "";
+            //questText.GetComponent<TextMeshProUGUI>().text = "";
             //Debug.Log("destroy");
         }
     }

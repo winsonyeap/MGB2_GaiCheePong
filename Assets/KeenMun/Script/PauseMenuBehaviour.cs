@@ -12,9 +12,11 @@ public class PauseMenuBehaviour : MainMenuBehaviour
     public AudioSource GameplayMusic;
     public AudioSource GameOverMusic;
     public AudioSource GameWinMusic;
+    public AudioSource ScoringSound;
     public GameObject Rocket;
     public GameObject InactiveFlame;
 
+    public GameObject LoadScene;
 
     public void PauseGame()
     {
@@ -68,4 +70,15 @@ public class PauseMenuBehaviour : MainMenuBehaviour
         Application.Quit();
     }
 
+    public void LoadMainMenu()
+    {
+        LoadScene.SetActive(true);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void ScoreSoundPlay()
+    {
+        ScoringSound.Play();
+    }
 }

@@ -13,6 +13,7 @@ public class WrongAnswer : MonoBehaviour
 
     public GameObject Explosion;
 
+
     private void Start()
     {
         gc = GameObject.FindGameObjectWithTag("Game Controller");
@@ -21,7 +22,8 @@ public class WrongAnswer : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
-    {
+    {   
+     
         if (gcScript.limited && IsWrong && other.CompareTag("Player"))
         {
             gameOver = true;
@@ -44,6 +46,10 @@ public class WrongAnswer : MonoBehaviour
             Debug.Log("done");       
             //game over when collide with wrong answer
         }
-       
-    } 
+
+        if (other.CompareTag("Player") && !IsWrong)
+        {
+            FindObjectOfType<PauseMenuBehaviour>().ScoreSoundPlay();
+        }
+    }
 }
