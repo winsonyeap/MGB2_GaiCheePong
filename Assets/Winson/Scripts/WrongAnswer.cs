@@ -12,7 +12,7 @@ public class WrongAnswer : MonoBehaviour
     public PauseMenuBehaviour pauseMenuBehavior; //JokeChu script
 
     public GameObject Explosion;
-
+    public SpriteRenderer panel;
 
     private void Start()
     {
@@ -50,6 +50,7 @@ public class WrongAnswer : MonoBehaviour
         if (other.CompareTag("Player") && !IsWrong)
         {
             FindObjectOfType<PauseMenuBehaviour>().ScoreSoundPlay();
+            panel.color = new Color(0, 1, 0, 0.6f);
         }
     }
 }

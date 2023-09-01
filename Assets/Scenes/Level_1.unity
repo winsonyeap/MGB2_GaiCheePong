@@ -781,7 +781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dodgeSpeed: 8
-  rollSpeed: 5
+  rollSpeed: 6
   horizMovement: 0
 --- !u!54 &985834180
 Rigidbody:

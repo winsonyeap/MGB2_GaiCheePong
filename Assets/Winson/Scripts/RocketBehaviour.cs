@@ -5,9 +5,9 @@ using UnityEngine;
 public class RocketBehaviour : MonoBehaviour
 {
     private Rigidbody rb;
-
+    private float horizontalSpeed;
     [Tooltip("How fast the ball moves left/right")]
-    public float dodgeSpeed = 5;
+    public float dodgeSpeed = 6;
 
     [Tooltip("How fast the ball moves forwards automatically")]
     [Range(0, 10)]
@@ -27,10 +27,10 @@ public class RocketBehaviour : MonoBehaviour
     }
     private void Update()
     {
-        var horizontalSpeed = Input.GetAxis("Horizontal") * dodgeSpeed;
+        //float horizontalSpeed = 0;
 
         // Check if we are running on a mobile device
-#if UNITY_IOS || UNITY_ANDROID
+    #if UNITY_IOS || UNITY_ANDROID
 
         if (horizMovement == MobileHorizMovement.Accelerometer)
         {
@@ -38,13 +38,13 @@ public class RocketBehaviour : MonoBehaviour
             horizontalSpeed = Input.acceleration.x * dodgeSpeed;
         }
 
-#endif
+    #endif
     }
 
     private void FixedUpdate()
     {
         // Check if we're moving to the side
-        float horizontalSpeed = 0;
+        //float horizontalSpeed = 0;
 
         // Check if we are running either in the Unity editor or in a    
         // standalone build.
@@ -58,16 +58,16 @@ public class RocketBehaviour : MonoBehaviour
             horizontalSpeed = CalculateMovement(Input.mousePosition);
         }
 
-        // Check if we are running on a mobile device
-#elif UNITY_IOS || UNITY_ANDROID
-            // Check if Input has registered more than zero touches        
-            if (Input.touchCount > 0)        
-            {            
-                // Store the first touch detected.            
-                Touch touch = Input.touches[0];            
-                horizontalSpeed = CalculateMovement(touch.position);        
-            }    
-#endif
+             //        // Check if we are running on a mobile device
+            //#elif UNITY_IOS || UNITY_ANDROID
+            //            // Check if Input has registered more than zero touches        
+            //            if (Input.touchCount > 0)        
+            //            {            
+            //                // Store the first touch detected.            
+            //                Touch touch = Input.touches[0];            
+            //                horizontalSpeed = CalculateMovement(touch.position);        
+            //            }    
+    #endif
 
         rb.AddForce(horizontalSpeed, 0, rollSpeed);
     }

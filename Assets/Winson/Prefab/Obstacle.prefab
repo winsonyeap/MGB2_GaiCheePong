@@ -503,7 +503,7 @@ MonoBehaviour:
   otherOption: {fileID: 6860968332179215418}
   pauseMenuBehavior: {fileID: 0}
   Explosion: {fileID: 6700402553237159260, guid: 75b4d233a00be24429988c3925ba900b, type: 3}
-  ScoringSound: {fileID: 1664442986754024391, guid: 7d22d8db74510694aaead06a2f7cfa9b, type: 3}
+  panel: {fileID: 7757612217133823353}
 --- !u!1 &6860968331939725937
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,7 +756,7 @@ MonoBehaviour:
   otherOption: {fileID: 6860968331725703558}
   pauseMenuBehavior: {fileID: 0}
   Explosion: {fileID: 6700402553237159260, guid: 75b4d233a00be24429988c3925ba900b, type: 3}
-  ScoringSound: {fileID: 1664442986754024391, guid: 7d22d8db74510694aaead06a2f7cfa9b, type: 3}
+  panel: {fileID: 220247759961585243}
 --- !u!1 &6860968332348129014
 GameObject:
   m_ObjectHideFlags: 0
