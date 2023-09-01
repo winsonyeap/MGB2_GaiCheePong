@@ -12213,6 +12213,7 @@ MonoBehaviour:
   numOfQuestions: 99999999
   numOfQuestionsAsked: 0
   questionPanel: {fileID: 1463054444}
+  progressSlider: {fileID: 0}
 --- !u!4 &2020375907
 Transform:
   m_ObjectHideFlags: 0
@@ -12537,6 +12538,18 @@ PrefabInstance:
       propertyPath: gcScript
       value: 
       objectReference: {fileID: 2020375906}
+    - target: {fileID: 347491177213048095, guid: 9d8c4ed38c6b1e94a9018a8efa91e2a8, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 782781187369381041, guid: 9d8c4ed38c6b1e94a9018a8efa91e2a8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657247047795110130, guid: 9d8c4ed38c6b1e94a9018a8efa91e2a8, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7419223801173728144, guid: 9d8c4ed38c6b1e94a9018a8efa91e2a8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
-public class PauseMenuBehaviour : MainMenuBehaviour
+public class PauseMenuBehaviour : MonoBehaviour
 {
     public GameObject gameOverMenu;
     public GameObject gameWinMenu;
@@ -13,7 +13,7 @@ public class PauseMenuBehaviour : MainMenuBehaviour
     public AudioSource GameOverMusic;
     public AudioSource GameWinMusic;
     public AudioSource ScoringSound;
-    public GameObject Rocket;
+    //public GameObject Rocket;
     public GameObject InactiveFlame;
 
     public GameObject LoadScene;
@@ -70,11 +70,11 @@ public class PauseMenuBehaviour : MainMenuBehaviour
         Application.Quit();
     }
 
-    public void LoadMainMenu()
+    public void LoadLevel(string levelName)
     {
         LoadScene.SetActive(true);
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(levelName);
     }
 
     public void ScoreSoundPlay()

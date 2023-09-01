@@ -29,6 +29,7 @@ public class GameController : MonoBehaviour
 
     //JokeChu stuff
     public GameObject questionPanel;
+    public Slider progressSlider;
 
     // Update is called once per frame
     void Update()
@@ -39,6 +40,7 @@ public class GameController : MonoBehaviour
             timer = 0.0f;
             GenerateQuestionAndOptions();
             numOfQuestionsAsked++;
+            progressSlider.value++;
         }
 
         else if(timer >= spawnInterval && !limited)
@@ -139,4 +141,5 @@ public class GameController : MonoBehaviour
             }
         }
     }
+
 }
